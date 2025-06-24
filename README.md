@@ -1,114 +1,164 @@
-# Portfolio Management Application
+# Portfolio Management App
 
-A real-time portfolio management application built with the MERN stack (MongoDB, Express, React, Node.js) that allows users to view and monitor their financial assets (stocks and mutual funds) with real-time updates.
+A full-stack portfolio management application with real-time updates, built with React, Node.js, Express, and MongoDB.
 
 ## Features
 
-- User selection from 250 predefined users
-- Real-time portfolio updates via WebSockets
-- Display of stocks and mutual funds with current prices
-- Price updates every 10 minutes
-- Portfolio valuation and profit/loss tracking
-- Price history visualization with charts
+- Real-time portfolio tracking
+- Asset price updates
+- Interactive charts and analytics
+- User management
+- Responsive design
+- WebSocket integration for live updates
 
-## Technical Stack
+## Tech Stack
 
 - **Frontend**: React, Chart.js, Socket.io-client
-- **Backend**: Node.js, Express
+- **Backend**: Node.js, Express, Socket.io
 - **Database**: MongoDB
-- **Real-time Updates**: Socket.io
-- **Scheduled Tasks**: node-cron
+- **Real-time**: WebSocket connections
+- **Styling**: CSS3 with responsive design
 
-## Project Structure
-
-```
-portfolio-management-app/
-├── client/                  # React frontend
-│   ├── public/
-│   └── src/
-│       ├── components/      # Reusable UI components
-│       ├── context/         # React context providers
-│       ├── pages/           # Main application pages
-│       ├── App.js           # Main application component
-│       └── index.js         # Entry point
-│
-└── server/                  # Node.js backend
-    ├── models/              # MongoDB schemas
-    ├── routes/              # API endpoints
-    ├── services/            # Business logic services
-    ├── server.js            # Server entry point
-    └── seedDatabase.js      # Database seeding script
-```
-
-## Setup and Installation
+## Quick Start
 
 ### Prerequisites
 
-- Node.js (v14 or later)
-- MongoDB (running locally or accessible via connection string)
+- Node.js (v16 or higher)
+- npm or yarn
+- MongoDB Atlas account
 
-### Server Setup
+### Installation
 
-1. Navigate to the server directory:
-   ```
-   cd portfolio-management-app/server
-   ```
-
-2. Install dependencies:
-   ```
-   npm install
-   ```
-
-3. Create a `.env` file with the following variables:
-   ```
-   PORT=5000
-   MONGODB_URI=mongodb://localhost:27017/portfolio-management
-   CLIENT_URL=http://localhost:3000
-   NODE_ENV=development
-   ```
-
-4. Seed the database with dummy data:
-   ```
-   node seedDatabase.js
-   ```
-
-5. Start the server:
-   ```
-   npm start
-   ```
-
-### Client Setup
-
-1. Navigate to the client directory:
-   ```
-   cd portfolio-management-app/client
-   ```
+1. Clone the repository:
+```bash
+git clone https://github.com/Ranjith-H7/stock_market.git
+cd stock_market
+```
 
 2. Install dependencies:
-   ```
-   npm install
-   ```
+```bash
+npm run install-all
+```
 
-3. Start the React development server:
-   ```
-   npm start
-   ```
+3. Set up environment variables:
+   - Copy `server/.env.example` to `server/.env`
+   - Update the MongoDB connection string
 
-4. Access the application at [http://localhost:3000](http://localhost:3000)
+4. Start the development server:
+```bash
+npm run dev
+```
 
-## Usage
+The application will be available at:
+- Frontend: http://localhost:3000
+- Backend: http://localhost:5001
 
-1. Select a user from the user selection screen
-2. View the user's portfolios on the dashboard
-3. Click on a portfolio to see detailed holdings and performance
-4. Watch as prices automatically update every 10 minutes
+## Deployment Options
 
-## Data Model
+### 1. Heroku Deployment
 
-- **Users**: Basic user information
-- **Assets**: Stocks and mutual funds with price history
-- **Portfolios**: Collections of assets owned by users, with purchase data and current valuation
+1. Install Heroku CLI and login:
+```bash
+heroku login
+```
 
-## Price Updates
+2. Create a new Heroku app:
+```bash
+heroku create your-app-name
+```
 
-The application simulates price changes every 10 minutes using the node-cron scheduler. In a production environment, this would be replaced with real market data from financial APIs.
+3. Set environment variables:
+```bash
+heroku config:set MONGODB_URI=your_mongodb_connection_string
+heroku config:set NODE_ENV=production
+```
+
+4. Deploy:
+```bash
+git push heroku main
+```
+
+### 2. Vercel Deployment
+
+1. Install Vercel CLI:
+```bash
+npm i -g vercel
+```
+
+2. Deploy:
+```bash
+vercel
+```
+
+3. Set environment variables in Vercel dashboard
+
+### 3. Netlify Deployment
+
+1. Connect your GitHub repository to Netlify
+2. Set build settings:
+   - Build command: `npm run build`
+   - Publish directory: `client/build`
+3. Set environment variables in Netlify dashboard
+
+### 4. Docker Deployment
+
+1. Build and run with Docker Compose:
+```bash
+docker-compose up --build
+```
+
+2. Or build and run individual containers:
+```bash
+docker build -t portfolio-app .
+docker run -p 5001:5001 portfolio-app
+```
+
+### 5. Railway Deployment
+
+1. Connect your GitHub repository to Railway
+2. Set environment variables in Railway dashboard
+3. Deploy automatically on push
+
+## Environment Variables
+
+Create a `.env` file in the server directory with the following variables:
+
+```env
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/database
+PORT=5001
+NODE_ENV=production
+CLIENT_URL=https://your-frontend-url.com
+JWT_SECRET=your-secret-key
+```
+
+## API Endpoints
+
+- `GET /api/users` - Get all users
+- `POST /api/users` - Create a new user
+- `GET /api/portfolios` - Get all portfolios
+- `POST /api/portfolios` - Create a new portfolio
+- `GET /api/assets` - Get all assets
+- `POST /api/assets` - Create a new asset
+- `GET /api/stats` - Get portfolio statistics
+
+## WebSocket Events
+
+- `subscribe` - Subscribe to user updates
+- `priceUpdate` - Real-time price updates
+- `portfolioUpdate` - Portfolio changes
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
+
+## Support
+
+For support, email support@example.com or create an issue in the repository.
