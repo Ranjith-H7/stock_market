@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-management-app",
+  "version": "1.0.0",
+  "description": "Portfolio management application with real-time updates",
+  "scripts": {
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "seed": "cd server && node seedDatabase.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build && cd ../server && npm run build",
+    "start": "cd server && npm start",
+    "heroku-postbuild": "npm run install-all && npm run build",
+    "deploy-prepare": "npm run install-all && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  },
+  "author": "",
+  "license": "MIT"
+}
