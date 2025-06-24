@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: portfolio-management-app
+    env: node
+    buildCommand: npm run install-all && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        value: mongodb+srv://350ranjith:350ranjith@cluster0.qt7ptsg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - key: PORT
+        value: 5001 
