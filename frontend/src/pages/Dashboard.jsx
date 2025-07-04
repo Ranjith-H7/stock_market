@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { API_ENDPOINTS } from '../config/api';
 import AddAssetForm from '../components/AddAssetForm';
 import StockCard from '../components/StockCard';
 import PriceGraph from '../components/PriceGraph';
@@ -22,8 +23,8 @@ export default function Dashboard() {
     }
     try {
       const [userRes, assetsRes] = await Promise.all([
-        axios.get(`http://localhost:5001/api/portfolio/${userId}`),
-        axios.get('http://localhost:5001/api/assets')
+        axios.get(API_ENDPOINTS.PORTFOLIO(userId)),
+        axios.get(API_ENDPOINTS.ASSETS)
       ]);
       setUser(userRes.data);
       setAssets(assetsRes.data);
