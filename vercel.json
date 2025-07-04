@@ -1,17 +1,13 @@
 {
   "version": 2,
-  "name": "stock-market-app",
   "buildCommand": "npm install --prefix frontend && cd frontend && npm run build",
   "outputDirectory": "frontend/dist",
   "installCommand": "npm install --prefix backend && npm install --prefix frontend",
   "functions": {
-    "api/index.js": {
+    "api/*.js": {
       "runtime": "nodejs18.x",
       "maxDuration": 60
     }
-  },
-  "env": {
-    "NODE_ENV": "production"
   },
   "rewrites": [
     {
