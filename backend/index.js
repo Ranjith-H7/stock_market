@@ -121,6 +121,22 @@ const updateAllUsersPortfolioData = async () => {
   }
 };
 
+// Database initialization middleware (only for API routes)
+app.use('/api', async (req, res, next) => {
+  try {
+    await connectToDatabase();
+    // Initialize assets only once per deployment
+    if (!global.assetsInitialized) {
+      await initializeAssets();
+      global.assetsInitialized = true;
+    }
+    next();
+  } catch (error) {
+    console.error('Database connection error:', error);
+    res.status(500).json({ error: 'Database connection failed' });
+  }
+});
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api', assetRoutes);
@@ -164,18 +180,6 @@ app.get('/api/health', (req, res) => {
     timestamp: new Date().toISOString(),
     environment: process.env.NODE_ENV || 'development'
   });
-});
-
-// Initialize database connection and data
-app.use(async (req, res, next) => {
-  try {
-    await connectToDatabase();
-    await initializeAssets();
-    next();
-  } catch (error) {
-    console.error('Database initialization error:', error);
-    res.status(500).json({ error: 'Database connection failed' });
-  }
 });
 
 // For Vercel, we need to export the app as a serverless function
