@@ -56,33 +56,30 @@ A full-stack responsive web application for stock market portfolio management an
 
 ## 📸 Screenshots
 
-### Portfolio Dashboard
-![Portfolio Dashboard](./docs/images/portfolio-dashboard.png)
-*Real-time portfolio overview with P&L tracking and holdings summary*
 
-### Price Trends & Charts
-![Price Trends](./docs/images/price-trends.png)
-*Interactive price charts with multiple view options and trend analysis*
+[](./docs/images/portfolio-dashboard.png)
 
-### User Registration
-![User Registration](./docs/images/user-registration.png)
-*Clean and intuitive user registration interface*
 
-### Mobile Responsive Design
-![Mobile Responsive](./docs/images/mobile-responsive.png)
-*Fully responsive design optimized for mobile devices*
+[](./docs/images/price-trends.png)
 
-### Stock Listings
-![Stocks Listing](./docs/images/stocks-listing.png)
-*Browse all available stocks and mutual funds with real-time prices*
 
-### Trading Interface
-![Trading Interface](./docs/images/trading-interface.png)
-*Intuitive buy/sell interface with portfolio management*
 
-### Detailed Asset View
-![Detailed View](./docs/images/detailed-view.png)
-*Comprehensive asset information with volume and trend data*
+[](./docs/images/user-registration.png)
+
+[](./docs/images/mobile-responsive.png)
+
+
+
+[](./docs/images/stocks-listing.png)
+
+
+
+[](./docs/images/trading-interface.png)
+
+
+
+[](./docs/images/detailed-view.png)
+
 - **bcryptjs** - Password hashing
 - **node-cron** - Scheduled tasks for price updates
 - **CORS** - Cross-origin resource sharing
