@@ -1,150 +1,264 @@
-# Stock Market Portfolio Application
+# 📈 Stock Market Portfolio Trading App
 
-A full-stack web application for managing stock market portfolios with real-time price updates.
+A full-stack responsive web application for stock market portfolio management and trading simulation. Built with React, Node.js, Express, and MongoDB.
 
-## Features
+![Stock Market App](https://img.shields.io/badge/License-MIT-blue.svg)
+![Node.js](https://img.shields.io/badge/Node.js-v18+-green.svg)
+![React](https://img.shields.io/badge/React-v18+-blue.svg)
+![MongoDB](https://img.shields.io/badge/MongoDB-v6+-green.svg)
 
-- User authentication (Register/Login)
-- Portfolio management
-- Buy/Sell stocks and mutual funds
-- Real-time price updates every 10 minutes
-- Interactive price charts
-- Dashboard with portfolio overview
+## ✨ Features
 
-## Tech Stack
+### 🎯 **Core Trading Features**
+- **Real-time Portfolio Management** - Track your investments in real-time
+- **Buy/Sell Stocks & Mutual Funds** - Simulate trading with live price updates
+- **Profit & Loss Tracking** - Real-time P&L calculations with percentage changes
+- **Balance Management** - Add virtual money to your trading account
+- **Transaction History** - Complete record of all buy/sell transactions
 
-### Backend
-- Node.js with Express
-- MongoDB with Mongoose
-- CORS enabled
-- Cron jobs for price updates
-- RESTful API
+### 📱 **Responsive Design**
+- **Mobile-First Design** - Optimized for all screen sizes
+- **Cross-Device Compatibility** - Works seamlessly on mobile, tablet, laptop, and desktop
+- **Touch-Friendly Interface** - 44px minimum touch targets for mobile accessibility
+- **Responsive Charts** - Price trend graphs that adapt to screen size
 
-### Frontend
-- React 18
-- Vite for development
-- React Router for navigation
-- Axios for API calls
-- Tailwind CSS for styling
-- Recharts for data visualization
+### 📊 **Market Features**
+- **Live Price Updates** - Prices update every 10 minutes automatically
+- **Price Trend Charts** - Interactive charts with multiple view options (Line, Area, Volume)
+- **Market Overview** - Browse all available stocks and mutual funds
+- **Asset Information** - Detailed asset information with volume data
 
-## Getting Started
+### 🔐 **User Management**
+- **User Authentication** - Secure registration and login system
+- **Portfolio Dashboard** - Personalized dashboard with portfolio summary
+- **Profile Management** - Manage user information and account balance
 
-### Prerequisites
-- Node.js (v14 or higher)
-- MongoDB Atlas account (or local MongoDB)
-- npm or yarn
+## 🚀 Tech Stack
 
-### Installation
+### **Frontend**
+- **React 18** - Modern React with hooks and functional components
+- **Vite** - Fast build tool and development server
+- **Tailwind CSS** - Utility-first CSS framework for responsive design
+- **React Router** - Client-side routing
+- **Recharts** - Interactive charts and graphs
+- **Axios** - HTTP client for API calls
 
-1. **Clone the repository**
-   ```bash
-   cd /Users/ranjith/Documents/jsProjects/stock_market
-   ```
+### **Backend**
+- **Node.js** - JavaScript runtime
+- **Express.js** - Web application framework
+- **MongoDB** - NoSQL database with Mongoose ODM
+- **JWT** - JSON Web Tokens for authentication
+- **bcryptjs** - Password hashing
+- **node-cron** - Scheduled tasks for price updates
+- **CORS** - Cross-origin resource sharing
 
-2. **Backend Setup**
-   ```bash
-   cd backend
-   npm install
-   ```
+## 📦 Installation & Setup
 
-3. **Frontend Setup**
-   ```bash
-   cd ../frontend
-   npm install
-   ```
+### **Prerequisites**
+- Node.js (v18 or higher)
+- MongoDB (local installation or MongoDB Atlas)
+- npm or yarn package manager
 
-### Running the Application
-
-1. **Start the Backend Server**
-   ```bash
-   cd backend
-   npm run dev
-   ```
-   Server will run on `http://localhost:5001`
-
-2. **Start the Frontend Development Server**
-   ```bash
-   cd frontend
-   npm run dev
-   ```
-   Application will be available on `http://localhost:5173`
-
-### Environment Variables
-
-The backend requires a `.env` file with:
-```
-MONGO_URI=mongodb+srv://ranjith360set:ranjith360set@cluster0.dssnbmo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+### **1. Clone the Repository**
+```bash
+git clone https://github.com/Ranjith-H7/stock_market.git
+cd stock_market
 ```
 
-## API Endpoints
+### **2. Backend Setup**
+```bash
+cd backend
+npm install
 
-### Authentication
+# Create .env file
+cp .env.example .env
+# Edit .env with your MongoDB connection string
+```
+
+**Environment Variables (.env):**
+```env
+MONGO_URI=mongodb://localhost:27017/stock_market
+# OR for MongoDB Atlas:
+# MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/stock_market
+JWT_SECRET=your_jwt_secret_key_here
+PORT=5001
+```
+
+**Start Backend Server:**
+```bash
+npm start
+# or for development with auto-reload:
+npm run dev
+```
+
+### **3. Frontend Setup**
+```bash
+cd ../frontend
+npm install
+
+# Start development server
+npm run dev
+
+# For production build
+npm run build
+```
+
+## 🌐 API Endpoints
+
+### **Authentication**
 - `POST /api/auth/register` - Register new user
 - `POST /api/auth/login` - User login
 
-### Assets & Portfolio
-- `GET /api/assets` - Get all available assets
+### **Portfolio Management**
 - `GET /api/portfolio/:userId` - Get user portfolio
 - `POST /api/buy` - Buy assets
 - `POST /api/sell` - Sell assets
+- `POST /api/add-balance` - Add money to account
+
+### **Assets & Market Data**
+- `GET /api/assets` - Get all available assets
 - `GET /api/graphdata/:assetId` - Get price history for charts
+- `GET /api/transactions/:userId` - Get user transaction history
+- `GET /api/next-update` - Get next price update countdown
 
-## Default Assets
+### **Automated Features**
+- **Price Updates**: Every 10 minutes via cron job
+- **Portfolio Recalculation**: Automatic P&L updates for all users
+- **Real-time Data**: Live portfolio value updates
 
-The application includes dummy data for:
+## 📱 Responsive Design Breakdown
 
-### Stocks
-- TCS (₹4,000)
-- Reliance (₹3,000)
-- Infosys (₹1,800)
-- HDFC (₹2,500)
-- Tata Steel (₹1,200)
+### **Mobile (< 640px)**
+- Single column layouts
+- Stacked navigation
+- Compressed cards and forms
+- Touch-friendly buttons (44px min height)
+- Horizontal scrolling tables
 
-### Mutual Funds
-- SBI Bluechip (₹500)
-- ICICI Equity (₹600)
-- Axis MF (₹450)
-- Kotak MF (₹700)
+### **Tablet (640px - 1024px)**
+- Two-column layouts
+- Tab-based navigation
+- Responsive grid systems
+- Optimized chart sizes
 
-## Features in Detail
+### **Desktop (> 1024px)**
+- Multi-column layouts (up to 4 columns)
+- Full navigation menus
+- Large interactive charts
+- Maximum information density
 
-### Price Updates
-- Automatic price updates every 10 minutes using cron jobs
-- Random price fluctuations between -5% to +5%
-- Price history tracking for charts
+## 🎨 Key Components
 
-### Portfolio Management
-- Starting balance: ₹100,000
-- Buy/Sell functionality with real-time balance updates
-- Profit/Loss calculation
-- Quantity tracking
+### **Dashboard**
+- Portfolio summary cards
+- Real-time profit/loss display
+- Price trend charts
+- Quick trading interface
 
-### User Interface
-- Responsive design with Tailwind CSS
-- Real-time countdown timer for next price update
-- Interactive charts showing price trends
-- Clean and modern dashboard
+### **Trading Interface**
+- Asset selection grid
+- Buy/sell forms with validation
+- Transaction preview
+- Real-time total calculations
 
-## Usage
+### **Portfolio Management**
+- Holdings table with P&L
+- Transaction history
+- Balance management
+- Performance metrics
 
-1. **Register/Login**: Create an account or login with existing credentials
-2. **View Dashboard**: See your portfolio balance and holdings
-3. **Buy Assets**: Select assets from the dropdown and specify quantity
-4. **Sell Assets**: Sell your holdings when profitable
-5. **Monitor Trends**: View price charts to make informed decisions
+### **Market Overview**
+- Stocks and mutual funds listing
+- Price information
+- Volume data
+- Asset categories
 
-## Development
+## 🔄 Real-Time Features
 
-The application uses:
-- Hot reloading for both frontend and backend
-- Nodemon for backend auto-restart
-- Vite for fast frontend development
-- Tailwind CSS for rapid styling
+### **Automatic Price Updates**
+- Stocks: ±8% volatility every 10 minutes
+- Mutual Funds: ±4% volatility every 10 minutes
+- Volume fluctuations: ±20% variation
+- Price history tracking (2000 data points)
 
-## Notes
+### **Portfolio Calculations**
+- Real-time profit/loss calculations
+- Percentage change tracking
+- Total invested vs current value
+- Individual asset performance
 
-- Prices update automatically every 10 minutes
-- All monetary values are in Indian Rupees (₹)
-- Price history is maintained for charting
-- User data persists in MongoDB
+## 🚀 Deployment
+
+### **Frontend (Vite Build)**
+```bash
+cd frontend
+npm run build
+# Deploy the 'dist' folder to your hosting service
+```
+
+### **Backend (Node.js)**
+```bash
+cd backend
+npm start
+# Deploy to services like Heroku, Railway, or DigitalOcean
+```
+
+### **Environment Setup for Production**
+- Set up MongoDB Atlas for cloud database
+- Configure CORS for production domains
+- Set secure JWT secrets
+- Use HTTPS in production
+
+## 🛠️ Development Scripts
+
+### **Backend**
+```bash
+npm start          # Start production server
+npm run dev        # Start with nodemon (auto-reload)
+```
+
+### **Frontend**
+```bash
+npm run dev        # Start development server
+npm run build      # Build for production
+npm run preview    # Preview production build
+```
+
+## 📋 Future Enhancements
+
+- [ ] Real stock market API integration
+- [ ] Advanced charting with technical indicators
+- [ ] Push notifications for price alerts
+- [ ] Social features (following other traders)
+- [ ] Advanced order types (limit, stop-loss)
+- [ ] Mobile app development
+- [ ] Real-time WebSocket price updates
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Ranjith H**
+- GitHub: [@Ranjith-H7](https://github.com/Ranjith-H7)
+
+## 🙏 Acknowledgments
+
+- MongoDB for the robust NoSQL database
+- React team for the amazing frontend framework
+- Tailwind CSS for the utility-first CSS framework
+- Recharts for beautiful and responsive charts
+- Express.js for the minimal web framework
+
+---
+
+**⭐ If you found this project helpful, please give it a star!**

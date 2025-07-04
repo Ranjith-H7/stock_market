@@ -2,7 +2,7 @@
 
 A full-stack responsive web application for stock market portfolio management and trading simulation. Built with React, Node.js, Express, and MongoDB.
 
-![Stock Market App](https://img.shields.io/badge/License-ISC-blue.svg)
+![Stock Market App](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Node.js](https://img.shields.io/badge/Node.js-v18+-green.svg)
 ![React](https://img.shields.io/badge/React-v18+-blue.svg)
 ![MongoDB](https://img.shields.io/badge/MongoDB-v6+-green.svg)
@@ -244,7 +244,7 @@ npm run preview    # Preview production build
 
 ## 📄 License
 
-This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👨‍💻 Author
 
