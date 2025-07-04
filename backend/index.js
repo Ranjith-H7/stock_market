@@ -15,7 +15,7 @@ app.use(cors({
   origin: [
     'http://localhost:5173',
     'http://localhost:3000',
-    'https://your-vercel-domain.vercel.app', // Replace with your actual domain
+    'https://stock-market-oaug88c7f-ranjith-hs-projects.vercel.app',
     /\.vercel\.app$/
   ],
   credentials: true
