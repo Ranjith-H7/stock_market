@@ -28,6 +28,26 @@ A full-stack responsive web application for stock market portfolio management an
 - **Responsive Charts** - Price trend graphs that adapt to screen size
 
 ### 📊 **Market Features**
+- **Live Asset Listings** - Browse stocks and mutual funds with real-time prices
+- **Interactive Price Charts** - Line, Area, and Volume chart views
+- **Asset Search & Filter** - Find specific stocks and funds easily
+- **Market Data Simulation** - Dynamic price updates every 10 minutes
+
+## 📸 Screenshots
+
+![Portfolio Dashboard](./images/1.png)
+
+![Price Trends](./images/2.png)
+
+![User Registration](./images/3.png)
+
+![Mobile Responsive](./images/4.png)
+
+![Stock Listings](./images/5.png)
+
+![Trading Interface](./images/6.png)
+
+![Detailed View](./images/7.png)
 - **Live Price Updates** - Prices update every 10 minutes automatically
 - **Price Trend Charts** - Interactive charts with multiple view options (Line, Area, Volume)
 - **Market Overview** - Browse all available stocks and mutual funds
