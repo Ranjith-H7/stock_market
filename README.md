@@ -2,10 +2,15 @@
 
 A full-stack responsive web application for stock market portfolio management and trading simulation. Built with React, Node.js, Express, and MongoDB.
 
+## 🌐 Live Demo
+
+**🚀 [Visit the Live Application](https://stock-market-vert.vercel.app/)**
+
 ![Stock Market App](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Node.js](https://img.shields.io/badge/Node.js-v18+-green.svg)
 ![React](https://img.shields.io/badge/React-v18+-blue.svg)
 ![MongoDB](https://img.shields.io/badge/MongoDB-v6+-green.svg)
+![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black.svg)
 
 ## ✨ Features
 
@@ -48,6 +53,36 @@ A full-stack responsive web application for stock market portfolio management an
 - **Express.js** - Web application framework
 - **MongoDB** - NoSQL database with Mongoose ODM
 - **JWT** - JSON Web Tokens for authentication
+
+## 📸 Screenshots
+
+### Portfolio Dashboard
+![Portfolio Dashboard](./docs/images/portfolio-dashboard.png)
+*Real-time portfolio overview with P&L tracking and holdings summary*
+
+### Price Trends & Charts
+![Price Trends](./docs/images/price-trends.png)
+*Interactive price charts with multiple view options and trend analysis*
+
+### User Registration
+![User Registration](./docs/images/user-registration.png)
+*Clean and intuitive user registration interface*
+
+### Mobile Responsive Design
+![Mobile Responsive](./docs/images/mobile-responsive.png)
+*Fully responsive design optimized for mobile devices*
+
+### Stock Listings
+![Stocks Listing](./docs/images/stocks-listing.png)
+*Browse all available stocks and mutual funds with real-time prices*
+
+### Trading Interface
+![Trading Interface](./docs/images/trading-interface.png)
+*Intuitive buy/sell interface with portfolio management*
+
+### Detailed Asset View
+![Detailed View](./docs/images/detailed-view.png)
+*Comprehensive asset information with volume and trend data*
 - **bcryptjs** - Password hashing
 - **node-cron** - Scheduled tasks for price updates
 - **CORS** - Cross-origin resource sharing
