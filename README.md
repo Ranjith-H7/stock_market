@@ -4,7 +4,7 @@ A full-stack responsive web application for stock market portfolio management an
 
 ## 🌐 Live Demo
 
-**🚀 [Visit the Live Application](https://stock-market-vert.vercel.app/)**
+**🚀 [Visit the Live Application](https://stockmarket-gp5istgbv-ranjith-hs-projects.vercel.app/)**
 
 ![Stock Market App](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Node.js](https://img.shields.io/badge/Node.js-v18+-green.svg)
